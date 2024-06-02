@@ -4,36 +4,88 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" href= "https://img.icons8.com/?size=96&id=WlOQiOqPF2S3&format=png">
   
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
-  Features
-  Company
-  Careers
-  About
+<section class="nav">
+    <nav class="navbar">
+      <div class="logo"> <img src="./images/logo.svg"> </div>
+      <ul>
+            <li>
+              <a class= "dropdown open" href="#"> Features 
+                <img src="./images/icon-arrow-down.svg" class="icon"> </a>
+              <ul class="Withicons dropdown-list displayDrop">
 
-  Login
-  Register
+                <li><a class = "text-option" href="#"> <span class="rest-icon"><img src="./images/icon-todo.svg"></span>Todo List </a></li>
 
-  Make remote work
+                <li><a class = "text-option" href="#"> <span class="rest-icon"><img src="./images/icon-calendar.svg"></span>Calender </a></li>
 
-  Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.
+                <li><a class = "text-option" href="#"> <span class="rest-icon"><img src="./images/icon-reminders.svg"></span> Reminders</a></li>
 
-  Learn more
+                <li><a class = "text-option" href="#"> <span class="rest-icon"><img src="./images/icon-planning.svg"></span>Planning </a></li>
+
+              </ul>
+            </li>
+          
+            <li>
+              <a class= "dropdown open" href="#"> Company <img src="./images/icon-arrow-down.svg" class="icon"></a>
+              <ul class=" woIcons dropdown-list displayDrop">
+                <li><a href="#"> History</a></li>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="#"> Blog</a></li>
+              </ul>
+            </li>
+        <li><a href="#"> Careers</a></li>
+        <li><a href="#"> About</a></li>
+
+        <div class="btn">
+          <button class="login"> Login</button>
+          <button class="reg"> Register</button>
+        </div>
+        
+      </ul>
+
+    </nav>
+  </section>
+
+</main>
+  <section class="homepage">
+      <h1 class="main-title"> Make <br> remote work </h1>
+      <p class="description">
+        Get your team in sync, no matter your location. <br> Streamline processes, create team rituals, and <br> watch productivity soar.
+      </p>
+      <button class="btnLearn"> Learn more</button>
   
-  <div class="attribution">
+    <div class="client-pro">  
+        <img class= "img" src="./images/client-databiz.svg">
+        <img  class = "img" src="./images/client-audiophile.svg">
+        <img class = "img" src="./images/client-meet.svg">
+        <img class = "img" src="./images/client-maker.svg">
+
+    </div>  
+    
+    <!-- <article class="cl">
+      <div class="hero">
+        <img class="hero-img" src="./images/image-hero-desktop.png">
+      </div>
+    </article> -->
+    <img class="hero-img" src="./images/image-hero-desktop.png">
+  </section>
+  
+</main>
+
+<script src="main.js"> </script>
+
+<!-- <img class="hero-img" src="./images/image-hero-desktop.png"> -->
+
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div> -->
 </body>
 </html>
