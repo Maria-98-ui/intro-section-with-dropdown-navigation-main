@@ -1,74 +1,59 @@
+
 'use strict';
 
-const dropdown = document.querySelectorAll('.dropdown');
-const dropContent = document.querySelectorAll('dropdown-list');
-const icon = document.querySelectorAll('.icon');
+const dropdowns = document.querySelectorAll('.dropdown');
+const toggleBtn =  document.querySelector('.toggle-btn');
+const nav = document.querySelector('nav');
+const nav_menu = document.querySelector('.nav-menu');
 
 
-// const dropdownIcon = function(){
-//     this.classList.toggle('open');
+dropdowns.forEach((dropdown, index) => {
+    const icon = dropdown.querySelector('.icon');
+    const dropContent = dropdown.nextElementSibling;
 
-//     if(this.classList.contains('open')){
-//         icon.src = './images/icon-arrow-up.svg';
-//     }else{
-//         icon.src = './images/icon-arrow-down.svg';
-//     }
+    dropdown.addEventListener('click', function (event) {
+        event.preventDefault();
 
-//     console.log("test");
-// }
+        // Toggle the 'show' class on the dropdown content
+        dropContent.classList.toggle('show');
+        
+        // Toggle the 'open' class on the dropdown itself
+        dropdown.classList.toggle('open');
 
-// dropdown.addEventListener('click', function(){
-
-//     dropdown.array.forEach(drp => {
-//         drp.classList.toggle('open');
-
-//         if(drp.classList.contains('open')){
-//             icon.src = './images/icon-arrow-up.svg';
-//         }else{
-//             icon.src = './images/icon-arrow-down.svg';
-//         }
-//     });
-    // dropdown.for(drp => {
-    //     drp.classList.toggle('open');
-
-    //     if(drp.classList.contains('open')){
-    //         icon.src = './images/icon-arrow-up.svg';
-    //     }else{
-    //         icon.src = './images/icon-arrow-down.svg';
-    //     }
-    // });
-    // this.classList.toggle('open');
-
-    // if(this.classList.contains('open')){
-    //     icon.src = './images/icon-arrow-up.svg';
-    // }else{
-    //     icon.src = './images/icon-arrow-down.svg';
-    // }
-
-//});
-
-
-
-/*add css classlist to html 
-
-
-*
- add css toggle to html*/ 
-
- for(let i =0; i<dropdown.length; i++){
-    dropdown[i].addEventListener("click",function(){
-        this.classList.remove("dislay");
-        this.childNodes[1].classList.toggle("iconRotate");
-
-    });
-}
-
-document.addEventListener("click",function(e){
-    e.preventDefault();
-    for(let i =0; i< dropContent.length; i++){
-        if(dropContent[i].classList.contains("displayGrid") == true && e.target !== dropContent[i] && e.target !== dropdown[i]){
-            dropContent[i].classList.add("display");
-            icon[i].classList.remove("iconRotate");
+        // Change the icon based on the 'open' class
+        if (dropdown.classList.contains('open')) {
+            icon.src = './images/icon-arrow-up.svg';
+        } else {
+            icon.src = './images/icon-arrow-down.svg';
         }
-    }
+    });
 });
+
+// toggleBtn.addEventListener('click', ()=>{
+//     nav_menu.classList.toggle('show');
+    
+// });
+
+document.addEventListener('click', function (event) {
+
+    if(!event.target.closest('nav')){
+        dropdowns.forEach(dropdown => {
+            const icon = dropdown.querySelector('.icon');
+            const dropContent = dropdown.nextElementSibling;
+
+            // Check if the click is outside the dropdown and its content
+            dropdown.classList.remove('open');
+            dropContent.classList.remove('show');
+            icon.src = './images/icon-arrow-down.svg';
+            
+        });
+        
+    };
+
+});
+
+
+
+
+
+
