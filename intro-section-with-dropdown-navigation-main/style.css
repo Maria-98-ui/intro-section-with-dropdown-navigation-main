@@ -345,12 +345,13 @@ ul li ul.dropdown-list a{
 
 .hero-img{
     /* display: block; */
-    width: 350px;
+    max-width: 620%;
     position: absolute;
     padding-top: 1px;
     max-width: 379px;
-    padding-left: 25em;
-    bottom: 30px;
+    padding-left: 30em;
+    bottom: 20px;
+
     z-index: -1;
     /* padding-bottom: 220px; */
 }
